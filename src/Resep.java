@@ -6,6 +6,7 @@ public class Resep {
     private String deskripsi;
     private String langkah;
     private String bahan;
+    private String imagePath;
 
     String getJudul(){
         return judul;
@@ -16,27 +17,39 @@ public class Resep {
     String getDatePosted(){
         return datePosted;
     }
+    String getDeskripsi(){
+        return deskripsi;
+    }
     String getLangkah(){
         return langkah;
     }
     String getBahan(){
         return bahan;
     }
-
-    void setJudul(){
-
+    String getImagePath(){
+        return imagePath;
     }
-    void setUploader(){
 
+    void setJudul(String judul){
+        this.judul = judul;
     }
-    void setDatePosted(){
-
+    void setUploader(String uploader){
+        this.uploader = uploader;
     }
-    void setLangkah(){
-
+    void setDatePosted(String datePosted){
+        this.datePosted = datePosted;
     }
-    void setBahan(){
-
+    void setDeskripsi(String deskripsi){
+        this.deskripsi = deskripsi;
+    }
+    void setLangkah(String langkah){
+        this.langkah = langkah;
+    }
+    void setBahan(String bahan){
+        this.bahan = bahan;
+    }
+    void setImagePath(String imagePath){
+        this.imagePath = imagePath;
     }
 
 
