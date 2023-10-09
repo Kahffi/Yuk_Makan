@@ -4,6 +4,15 @@ public class Admin {
     private String nama;
     private String phoneNum;
 
+
+    public Admin(String username, String password, String nama, String phoneNum){
+        this.username = username;
+        this.password = password;
+        this.nama = nama;
+        this.phoneNum = phoneNum;
+    }
+
+
     String getAdminNama(){
         return nama;
     }

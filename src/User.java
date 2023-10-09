@@ -3,11 +3,18 @@ import java.util.ArrayList;
 public class User {
     private String username;
     private String password;
-    private String alamat;
+    private String phoneNum;
     private String nama;
 
     // arraylist digunakan untuk mempermudah proses modifikasi array
     ArrayList <Resep> daftarFavorit = new ArrayList<Resep>();
+
+    public User (String username, String password, String phoneNum, String nama){
+        this.username = username;
+        this.password = password;
+        this.phoneNum = phoneNum;
+        this.nama = nama;
+    } 
 
     String getUserNama(){
         return nama;
@@ -19,7 +26,7 @@ public class User {
         return password;
     }
     String getAlamat(){
-        return alamat;
+        return phoneNum;
     }
 
     void setUserPassword(String password){
@@ -28,8 +35,8 @@ public class User {
     void setUserNama(String nama){
         this.nama = nama;
     }
-    void setUserAlamat(String alamat){
-        this.alamat = alamat;
+    void setUserAlamat(String phoneNum){
+        this.phoneNum = phoneNum;
     }
 
     //method untuk menambahkan resep kedalam daftar favorit
