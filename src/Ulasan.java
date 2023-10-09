@@ -3,6 +3,8 @@ public class Ulasan {
     String ulasan;
     String tanggalUlasan;
 
+
+
     String getUlasanUser(){
         return user.getUserUsername();
     }
@@ -11,6 +13,9 @@ public class Ulasan {
     }
     String getTanggalUlasan(){
         return tanggalUlasan;
+    }
+    String getUlasanUsername(){
+        return user.getUserUsername();
     }
     // menyimpan objek user yang memberikan ulasan
     void setUlasanUser(User user){
@@ -22,6 +27,7 @@ public class Ulasan {
     void setTanggalUlasan(String tanggalUlasan){
         this.tanggalUlasan = tanggalUlasan;
     }
+
 
 
 }

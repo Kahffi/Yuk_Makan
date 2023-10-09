@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Resep {
 
     private String judul;
@@ -7,6 +9,9 @@ public class Resep {
     private String langkah;
     private String bahan;
     private String imagePath;
+
+    //ArrayList untuk menampung ulasan-ulasan dari user
+    private ArrayList <Ulasan> ulasan = new ArrayList<Ulasan>();
 
     String getJudul(){
         return judul;
