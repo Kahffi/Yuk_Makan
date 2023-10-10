@@ -1,30 +1,30 @@
 public class Ulasan {
-    User user = new User();
-    String ulasan;
-    String tanggalUlasan;
+    private User user;
+    private String ulasan;
+    private String tanggalUlasan;
 
 
 
-    String getUlasanUser(){
+    public String getUlasanUser(){
         return user.getUserUsername();
     }
-    String getUlasan(){
+    public String getUlasan(){
         return ulasan;
     }
-    String getTanggalUlasan(){
+    public String getTanggalUlasan(){
         return tanggalUlasan;
     }
-    String getUlasanUsername(){
+    public String getUlasanUsername(){
         return user.getUserUsername();
     }
     // menyimpan objek user yang memberikan ulasan
-    void setUlasanUser(User user){
+    public void setUlasanUser(User user){
         this.user = user;
     }
-    void setUlasan(String ulasan){
+    public void setUlasan(String ulasan){
         this.ulasan = ulasan;
     }
-    void setTanggalUlasan(String tanggalUlasan){
+    public void setTanggalUlasan(String tanggalUlasan){
         this.tanggalUlasan = tanggalUlasan;
     }
 

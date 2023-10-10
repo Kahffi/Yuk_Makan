@@ -13,23 +13,23 @@ public class Admin {
     }
 
 
-    String getAdminNama(){
+    public String getAdminNama(){
         return nama;
     }
-    String getAdminUsername(){
+    public String getAdminUsername(){
         return username;
     }
-    String getAdminPassword(){
+    public String getAdminPassword(){
         return password;
     }
 
-    void setAdminPassword(String password){
+    public void setAdminPassword(String password){
         this.password = password;
     }
-    void setAdminNama(String nama){
+    public void setAdminNama(String nama){
         this.nama = nama;
     }
-    void setPhoneNum(String phoneNum){
+    public void setPhoneNum(String phoneNum){
         this.phoneNum = phoneNum;
     }
 

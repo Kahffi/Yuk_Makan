@@ -4,37 +4,37 @@ public class KontenEdukasi {
     private String judul;
     private String content;
     private String tanggal;
-    Admin uploader = new Admin();
+    private Admin uploader;
 
-    String getImagePath(){
+    public String getImagePath(){
         return imagePath;
     }
-    String getJudul(){
+    public String getJudul(){
         return judul;
     }
-    String getContent(){
+    public String getContent(){
         return content;
     }
-    String getUploader(){
+    public String getUploader(){
         return uploader.getAdminNama();
     }
-    String getTanggal(){
+    public String getTanggal(){
         return tanggal;
     }
 
-    void setImagePath(String imagePath){
+    public void setImagePath(String imagePath){
         this.imagePath = imagePath;
     }
-    void setJudul(String judul){
+    public void setJudul(String judul){
         this.judul = judul;
     }
-    void setUploader(Admin uploader){
+    public void setUploader(Admin uploader){
         this.uploader = uploader;
     }
-    void setContent(String content){
+    public void setContent(String content){
         this.content = content;
     }
-    void setTanggal(String tanggal){
+    public void setTanggal(String tanggal){
         this.tanggal = tanggal;
     }
 

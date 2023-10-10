@@ -16,35 +16,35 @@ public class User {
         this.nama = nama;
     } 
 
-    String getUserNama(){
+    public String getUserNama(){
         return nama;
     }
-    String getUserUsername(){
+    public String getUserUsername(){
         return username;
     }
-    String getUserPassword(){
+    public String getUserPassword(){
         return password;
     }
-    String getAlamat(){
+    public String getAlamat(){
         return phoneNum;
     }
 
-    void setUserPassword(String password){
+    public void setUserPassword(String password){
         this.password = password;
     }
-    void setUserNama(String nama){
+    public void setUserNama(String nama){
         this.nama = nama;
     }
-    void setUserAlamat(String phoneNum){
+    public void setUserAlamat(String phoneNum){
         this.phoneNum = phoneNum;
     }
 
     //method untuk menambahkan resep kedalam daftar favorit
-    void addToFav(Resep resep){
+    public void addToFav(Resep resep){
         //menambahkan resep ke dalam daftar favorit
         daftarFavorit.add(resep);
     }
-    void delFav(int index){
+    public void delFav(int index){
         daftarFavorit.remove(index);
     }
 

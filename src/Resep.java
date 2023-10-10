@@ -13,47 +13,47 @@ public class Resep {
     //ArrayList untuk menampung ulasan-ulasan dari user
     private ArrayList <Ulasan> ulasan = new ArrayList<Ulasan>();
 
-    String getJudul(){
+    public String getJudul(){
         return judul;
     }
-    String getUploader(){
+    public String getUploader(){
         return uploader;
     }
-    String getDatePosted(){
+    public String getDatePosted(){
         return datePosted;
     }
-    String getDeskripsi(){
+    public String getDeskripsi(){
         return deskripsi;
     }
-    String getLangkah(){
+    public String getLangkah(){
         return langkah;
     }
-    String getBahan(){
+    public String getBahan(){
         return bahan;
     }
-    String getImagePath(){
+    public String getImagePath(){
         return imagePath;
     }
 
-    void setJudul(String judul){
+    public void setJudul(String judul){
         this.judul = judul;
     }
-    void setUploader(String uploader){
+    public void setUploader(String uploader){
         this.uploader = uploader;
     }
-    void setDatePosted(String datePosted){
+    public void setDatePosted(String datePosted){
         this.datePosted = datePosted;
     }
-    void setDeskripsi(String deskripsi){
+    public void setDeskripsi(String deskripsi){
         this.deskripsi = deskripsi;
     }
-    void setLangkah(String langkah){
+    public void setLangkah(String langkah){
         this.langkah = langkah;
     }
-    void setBahan(String bahan){
+    public void setBahan(String bahan){
         this.bahan = bahan;
     }
-    void setImagePath(String imagePath){
+    public void setImagePath(String imagePath){
         this.imagePath = imagePath;
     }
 
