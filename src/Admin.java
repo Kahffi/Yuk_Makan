@@ -22,6 +22,9 @@ public class Admin {
     public String getAdminPassword(){
         return password;
     }
+    public String getAdminPhoneNum(){
+        return phoneNum;
+    }
 
     public void setAdminPassword(String password){
         this.password = password;

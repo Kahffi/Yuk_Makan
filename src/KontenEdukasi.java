@@ -6,6 +6,15 @@ public class KontenEdukasi {
     private String tanggal;
     private Admin uploader;
 
+    public KontenEdukasi(String judul, String content, String tanggal,
+                         Admin uploader, String imagePath){
+        this.judul = judul;
+        this.content = content;
+        this.tanggal = tanggal;
+        this.uploader = uploader;
+        this.imagePath = imagePath;
+    }
+
     public String getImagePath(){
         return imagePath;
     }

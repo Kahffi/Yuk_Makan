@@ -9,9 +9,19 @@ public class Resep {
     private String langkah;
     private String bahan;
     private String imagePath;
-
     //ArrayList untuk menampung ulasan-ulasan dari user
     private ArrayList <Ulasan> ulasan = new ArrayList<Ulasan>();
+
+    public Resep(String judul, String uploader, String datePosted, String deskripsi,
+                 String langkah, String bahan, String imagePath){
+        this.judul = judul;
+        this.uploader = uploader;
+        this.datePosted = datePosted;
+        this.deskripsi = deskripsi;
+        this.langkah = langkah;
+        this.bahan = bahan;
+        this.imagePath = imagePath;
+    }
 
     public String getJudul(){
         return judul;
