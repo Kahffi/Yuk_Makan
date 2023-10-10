@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class Resep {
 
     private String judul;
-    private String uploader;
+    private Admin uploader;
     private String datePosted;
     private String deskripsi;
     private String langkah;
@@ -12,7 +12,7 @@ public class Resep {
     //ArrayList untuk menampung ulasan-ulasan dari user
     private ArrayList <Ulasan> ulasan = new ArrayList<Ulasan>();
 
-    public Resep(String judul, String uploader, String datePosted, String deskripsi,
+    public Resep(String judul, Admin uploader, String datePosted, String deskripsi,
                  String langkah, String bahan, String imagePath){
         this.judul = judul;
         this.uploader = uploader;
@@ -26,7 +26,7 @@ public class Resep {
     public String getJudul(){
         return judul;
     }
-    public String getUploader(){
+    public Admin getUploader(){
         return uploader;
     }
     public String getDatePosted(){
@@ -48,7 +48,7 @@ public class Resep {
     public void setJudul(String judul){
         this.judul = judul;
     }
-    public void setUploader(String uploader){
+    public void setUploader(Admin uploader){
         this.uploader = uploader;
     }
     public void setDatePosted(String datePosted){
@@ -65,6 +65,13 @@ public class Resep {
     }
     public void setImagePath(String imagePath){
         this.imagePath = imagePath;
+    }
+    public void setUlasan(Ulasan ulasan){
+        this.ulasan.add(ulasan);
+    }
+
+    public String printUlasan(int index){
+        return ulasan.get(index).printUlasan();
     }
 
 

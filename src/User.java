@@ -39,6 +39,7 @@ public class User {
         this.phoneNum = phoneNum;
     }
 
+
     //method untuk menambahkan resep kedalam daftar favorit
     public void addToFav(Resep resep){
         //menambahkan resep ke dalam daftar favorit
