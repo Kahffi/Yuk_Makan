@@ -13,7 +13,7 @@ public class Main {
         Ulasan ulasan2 = new Ulasan(user2, "B aja gan", "17 Agustus 1945");
 
         resep1.setUlasan(ulasan1);
-        resep1.setUlasan(ulasan1);
+        resep1.setUlasan(ulasan2);
         System.out.println(resep1.printUlasan(0));
         System.out.println(resep1.printUlasan(1));
         System.out.println(admin1.getAdminNama());
