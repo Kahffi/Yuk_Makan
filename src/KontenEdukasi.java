@@ -47,4 +47,5 @@ public class KontenEdukasi {
         this.tanggal = tanggal;
     }
 
+
 }
