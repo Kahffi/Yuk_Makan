@@ -5,12 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="669c3566-ee3b-435c-9ebc-a88c0fde8c6a" name="Changes" comment="added banyak hehe">
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
+=======
+      <change beforePath="$PROJECT_DIR$/src/KontenEdukasi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/KontenEdukasi.java" afterDir="false" />
+>>>>>>> 30bc1fd34951cfaabd13a71d80b5b03ba816c5ae
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -25,14 +33,15 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 3
-}</component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+  </component>
   <component name="ProjectId" id="2WOc7cEQfJZsr0errYmAfIUWs2E" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+<<<<<<< HEAD
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
@@ -46,6 +55,36 @@
   }
 }</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+=======
+  <component name="PropertiesComponent">
+    <property name="GenerateAntBuildDialog.backupFiles" value="true" />
+    <property name="GenerateAntBuildDialog.enableUiFormCompile" value="true" />
+    <property name="GenerateAntBuildDialog.forceTargetJdk" value="true" />
+    <property name="GenerateAntBuildDialog.outputFileNameProperty" value="yukmakan" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="YukMakan" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+>>>>>>> 30bc1fd34951cfaabd13a71d80b5b03ba816c5ae
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="669c3566-ee3b-435c-9ebc-a88c0fde8c6a" name="Changes" comment="" />
@@ -68,6 +107,20 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added banyak hehe" />
     <option name="LAST_COMMIT_MESSAGE" value="added banyak hehe" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="165" y="47" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1697167246096">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="165" y="47" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.768@0.0.1366.768" timestamp="1697167246096" />
+    <state x="488" y="116" key="FileChooserDialogImpl" timestamp="1697165984263">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="488" y="116" key="FileChooserDialogImpl/0.0.1366.768@0.0.1366.768" timestamp="1697165984263" />
+    <state x="209" y="7" key="SettingsEditor" timestamp="1697165993932">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="209" y="7" key="SettingsEditor/0.0.1366.768@0.0.1366.768" timestamp="1697165993932" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
