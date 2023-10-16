@@ -8,6 +8,7 @@ public class Resep {
     private String deskripsi;
     private String langkah;
     private String bahan;
+    private String kandunganGizi;
     private String imagePath;
     //ArrayList untuk menampung ulasan-ulasan dari user
     private ArrayList <Ulasan> ulasan = new ArrayList<Ulasan>();
@@ -44,6 +45,9 @@ public class Resep {
     public String getImagePath(){
         return imagePath;
     }
+    public String getKandunganGizi(){
+        return kandunganGizi;
+    }
 
     public void setJudul(String judul){
         this.judul = judul;
@@ -68,6 +72,9 @@ public class Resep {
     }
     public void setUlasan(Ulasan ulasan){
         this.ulasan.add(ulasan);
+    }
+    public void setKandunganGizi(String kandunganGizi){
+        this.kandunganGizi = kandunganGizi;
     }
 
     public String printUlasan(int index){
