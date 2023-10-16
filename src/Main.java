@@ -8,7 +8,7 @@ public class Main {
         User user2 = new User("Nanda07", "nandasiuu", "50487548", "Nanda");
         Resep resep1 = new Resep("Capcay Balado", admin1, "17 Agustus 1945", "Lezat nikmat bermanfaat",
                 "1. Masukan ini\n2. Tambahkan itu\n3. Inikan itunya\n4. Capcay Balado siap disajikan",
-                "1. Cabe\n2. Wortel\n3. Jagung\n4. DLL", "../someImage.png");
+                "1. Cabe\n2. Wortel\n3. Jagung\n4. DLL", "../someImage.png", "12mg Vitamin C\n5g Vitamin A");
         Ulasan ulasan1 = new Ulasan(user1, "Mantap gan", "17 Agustus 1945");
         Ulasan ulasan2 = new Ulasan(user2, "B aja gan", "17 Agustus 1945");
 

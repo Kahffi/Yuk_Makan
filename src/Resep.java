@@ -14,7 +14,7 @@ public class Resep {
     private ArrayList <Ulasan> ulasan = new ArrayList<Ulasan>();
 
     public Resep(String judul, Admin uploader, String datePosted, String deskripsi,
-                 String langkah, String bahan, String imagePath){
+                 String langkah, String bahan, String imagePath, String kandunganGizi){
         this.judul = judul;
         this.uploader = uploader;
         this.datePosted = datePosted;
@@ -22,6 +22,7 @@ public class Resep {
         this.langkah = langkah;
         this.bahan = bahan;
         this.imagePath = imagePath;
+        this.kandunganGizi = kandunganGizi;
     }
 
     public String getJudul(){
