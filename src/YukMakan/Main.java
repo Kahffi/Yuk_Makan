@@ -11,12 +11,13 @@ public class Main {
                 "1. Cabe\n2. Wortel\n3. Jagung\n4. DLL", "../someImage.png", "12mg Vitamin C\n5g Vitamin A");
         Ulasan ulasan1 = new Ulasan(user1, "Mantap gan", "17 Agustus 1945");
         Ulasan ulasan2 = new Ulasan(user2, "B aja gan", "17 Agustus 1945");
-
+       
+        
         resep1.setUlasan(ulasan1);
         resep1.setUlasan(ulasan2);
         System.out.println(resep1.printUlasan(0));
         System.out.println(resep1.printUlasan(1));
-        System.out.println(admin1.getAdminNama());
+        System.out.println(admin1.getNama());
 
 
 

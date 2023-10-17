@@ -1,39 +1,20 @@
-public class Admin {
-    private String username;
-    private String password;
-    private String nama;
-    private String phoneNum;
+import YukMakan.Akun;
+import java.util.ArrayList;
+import java.util.Scanner;
 
+public class Admin extends Akun{
+    
+    ArrayList <KontenEdukasi> createdKontenEdukasi = new ArrayList <KontenEdukasi>();
+    Scanner scanner = new Scanner(System.in);
 
-    public Admin(String username, String password, String nama, String phoneNum){
-        this.username = username;
-        this.password = password;
-        this.nama = nama;
-        this.phoneNum = phoneNum;
+    public Admin(String username, String password, String phoneNum, String nama, String email) {
+        super(username, password, phoneNum, nama, email);
     }
-
-
-    public String getAdminNama(){
-        return nama;
-    }
-    public String getAdminUsername(){
-        return username;
-    }
-    public String getAdminPassword(){
-        return password;
-    }
-    public String getAdminPhoneNum(){
-        return phoneNum;
-    }
-
-    public void setAdminPassword(String password){
-        this.password = password;
-    }
-    public void setAdminNama(String nama){
-        this.nama = nama;
-    }
-    public void setPhoneNum(String phoneNum){
-        this.phoneNum = phoneNum;
+   
+    
+    public void createKontenEdukasi () {
+        System.out.println("Masukkan judul konten edukasi: ");
+        
     }
 
 }
