@@ -21,6 +21,7 @@ public class Main {
         System.out.println(resep1.printUlasan(0));
         System.out.println(resep1.printUlasan(1));
         System.out.println(admin1.getNama());
+        System.out.println(admin1.login("rahmatMegumi", "megumiRahmat"));
 
 
 

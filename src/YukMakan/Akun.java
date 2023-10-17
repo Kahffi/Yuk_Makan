@@ -65,4 +65,11 @@ public class Akun {
         this.email = email;
     }
     
+    public int login(String username, String password){
+        if (this.username == username && this.password == password){
+            return 1;
+        } 
+        return 0;
+    }
+    
 }
