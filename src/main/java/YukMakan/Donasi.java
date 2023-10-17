@@ -57,9 +57,8 @@ public class Donasi {
     public void setDeskripsi(String deskripsi) {
         this.deskripsi = deskripsi;
     }
-
-    public void setDonatur(ArrayList<User> donatur) {
-        this.donatur = donatur;
+    public void setDonatur(User donatur) {
+        this.donatur.add(donatur);
     }
     public void setCurrentDonasi(int nominalDonasi){
         this.currentDonasi += nominalDonasi;

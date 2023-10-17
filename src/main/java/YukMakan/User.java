@@ -1,6 +1,5 @@
 package YukMakan;
 
-import YukMakan.Akun;
 import java.util.ArrayList;
 
 public class User extends Akun {
