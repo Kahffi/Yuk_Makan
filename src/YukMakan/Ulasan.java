@@ -1,4 +1,7 @@
-public class Ulasan {
+
+import YukMakan.Akun;
+
+public class Ulasan extends Akun {
     private User user;
     private String ulasan;
     private String tanggalUlasan;

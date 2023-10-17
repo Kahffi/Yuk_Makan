@@ -24,6 +24,7 @@ public class Resep {
         this.imagePath = imagePath;
         this.kandunganGizi = kandunganGizi;
     }
+    
 
     public String getJudul(){
         return judul;
