@@ -1,3 +1,6 @@
+package YukMakan;
+
+import YukMakan.Ulasan;
 import java.util.ArrayList;
 
 public class Resep {

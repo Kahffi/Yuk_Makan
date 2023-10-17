@@ -1,3 +1,5 @@
+package YukMakan;
+
 public class KontenEdukasi {
 
     private String imagePath;
@@ -25,7 +27,7 @@ public class KontenEdukasi {
         return content;
     }
     public String getUploader(){
-        return uploader.getAdminNama();
+        return uploader.getNama();
     }
     public String getTanggal(){
         return tanggal;

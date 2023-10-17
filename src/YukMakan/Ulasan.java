@@ -1,7 +1,6 @@
+package YukMakan;
 
-import YukMakan.Akun;
-
-public class Ulasan extends Akun {
+public class Ulasan {
     private User user;
     private String ulasan;
     private String tanggalUlasan;
@@ -13,7 +12,7 @@ public class Ulasan extends Akun {
     }
 
     public String getUlasanUser(){
-        return user.getUserUsername();
+        return user.getUsername();
     }
     public String getUlasan(){
         return ulasan;
@@ -22,10 +21,10 @@ public class Ulasan extends Akun {
         return tanggalUlasan;
     }
     public String getUlasanUsername(){
-        return user.getUserUsername();
+        return user.getUsername();
     }
     public String printUlasan(){
-        return "Username: " + user.getUserUsername() + "\nUlasan: " + this.ulasan +
+        return "Username: " + user.getUsername() + "\nUlasan: " + this.ulasan +
                 "\nTanggal Ulasan: " + this.tanggalUlasan;
     }
     // menyimpan objek user yang memberikan ulasan

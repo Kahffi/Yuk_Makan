@@ -1,4 +1,4 @@
-import YukMakan.Akun;
+package YukMakan;
 import java.util.ArrayList;
 import java.util.Scanner;
 

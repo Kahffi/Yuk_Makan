@@ -1,3 +1,4 @@
+package YukMakan;
 import java.util.ArrayList;
 
 public class Donasi {
@@ -28,14 +29,14 @@ public class Donasi {
         return judul;
     }
     public String getCreatorName(){
-        return creator.getAdminUsername();
+        return creator.getUsername();
     }
     public String getDeskripsi()
     {
         return deskripsi;
     }
     public String getDonaturName (int index){
-        return donatur.get(index).getUserUsername();
+        return donatur.get(index).getUsername();
     }
     public String getImagePath(){
         return imagePath;
