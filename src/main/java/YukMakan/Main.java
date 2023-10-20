@@ -1,5 +1,5 @@
 package YukMakan;
-
+import DatabaseController.DbController;
 
 public class Main {
 
@@ -21,6 +21,9 @@ public class Main {
         System.out.println(resep1.printUlasan(1));
         System.out.println(admin1.getNama());
         System.out.println(admin1.login("rahmatMegumi", "megumiRahmat"));
+        DbController dbController = new DbController("root","jdbctest", "123212321");
+        
+        
 
 
 

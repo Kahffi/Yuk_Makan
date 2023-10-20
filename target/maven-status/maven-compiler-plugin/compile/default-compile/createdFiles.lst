@@ -2,6 +2,7 @@ YukMakan\Donasi.class
 YukMakan\Ulasan.class
 YukMakan\SecondaryController.class
 YukMakan\Resep.class
+DatabaseController\DbController.class
 YukMakan\Akun.class
 YukMakan\Main.class
 module-info.class
