@@ -1,21 +1,46 @@
 package YukMakan;
+import java.sql.*;
+import DatabaseController.DbController;
+import java.util.Scanner;
 
 public class KontenEdukasi {
+    
+    private Scanner scanner = new Scanner(System.in);
+    
+    private DbController dbController;
 
+    private static final String PROPERTIES = "(admin_username, judul, konten, tanggal, imagepath)";
     private String imagePath;
     private String judul;
     private String content;
     private String tanggal;
     private Admin uploader;
+    private String value;
 
-    public KontenEdukasi(String judul, String content, String tanggal, Admin uploader, String imagePath){
+    public KontenEdukasi(String judul, String content, String tanggal, Admin uploader, String imagePath, DbController dbController){
         this.judul = judul;
         this.content = content;
         this.tanggal = tanggal;
-        this.uploader = uploader;
         this.imagePath = imagePath;
+        this.dbController = dbController;
+        this.value =  "('" + uploader.getUsername() + "', '" + getJudul() + "', '" + 
+                    getContent() + "', current_date, '" + getImagePath() + "')";
+    }
+    public KontenEdukasi(DbController dbController){
+        this.dbController = dbController;
+        this.value =  "('" + uploader.getUsername() + "', '" + getJudul() + "', '" + 
+                    getContent() + "', current_date, '" + getImagePath() + "')";
     }
 
+    public void createKontenEdukasi (Admin uploader) {
+            this.uploader = uploader;
+            System.out.println("Judul konten edukasi: ");
+            setJudul(scanner.nextLine());
+            System.out.println("Konten edukasi : ");
+            setContent(scanner.nextLine());
+            dbController.insert("kontenedukasi", getProperties(), value);
+    }
+    
     public String getImagePath(){
         return imagePath;
     }
@@ -46,6 +71,9 @@ public class KontenEdukasi {
     }
     public void setTanggal(String tanggal){
         this.tanggal = tanggal;
+    }
+    public String getProperties(){
+        return PROPERTIES;
     }
 
 

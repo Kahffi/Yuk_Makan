@@ -22,7 +22,7 @@ public class Main {
         while (start == 1){
             System.out.println("Selamat Datang Di Aplikasi YukMakan");
             System.out.println("1. Login\n2. Daftar Akun");
-            menu = scanner.nextInt();
+            menu = Integer.parseInt(scanner.nextLine());
             if (menu == 1){
                 resultSet = akun.login();
                 try {
@@ -35,12 +35,16 @@ public class Main {
                             admin = new Admin(resultSet.getString("username"), resultSet.getString("password"),
                                     resultSet.getString("phonenum"), resultSet.getString("nama"), resultSet.getString("email"),
                                     resultSet.getString("role"), dbController);
+                            
+                            admin.mainMenu();
                         }
                         
                         else if ("user".equals(resultSet.getString("role"))){
                             user = new User(resultSet.getString("username"), resultSet.getString("password"),
                                     resultSet.getString("phonenum"), resultSet.getString("nama"), resultSet.getString("email"),
                                     resultSet.getString("role"), dbController);
+                            
+                            user.mainMenu();
                         }
                     }
                     else{
@@ -57,7 +61,7 @@ public class Main {
                 user.daftarAkun();
             }
             
-            System.out.println(user.getNama());
+            admin.mainMenu();
             
         }
         /*

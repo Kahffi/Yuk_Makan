@@ -50,4 +50,13 @@ public class DbController {
             return null;
         }
      }
+    
+    public void update(String table, String targetColumn, String newValue, String identifierColumn, String condition){
+         System.out.println(UPDATE + " " + table + " set " + targetColumn + " = " + newValue + " where " + identifierColumn + " = " + condition);
+        try {
+            statement.executeUpdate(UPDATE + " " + table + " set " + targetColumn + " = '" + newValue + "' where " + identifierColumn + " = '" + condition + "'");
+        } catch (SQLException ex) {
+            Logger.getLogger(DbController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 }
