@@ -22,7 +22,7 @@ public class DbController {
         try{
             conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + database, usn, pass);
             System.out.println("Connected Successfully");
-            statement = conn.createStatement();
+            statement = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
             
         } catch (Exception e) {
             System.out.println(e);
@@ -34,6 +34,7 @@ public class DbController {
         try {
             System.out.println(INSERT + table + property + "values " + value);
             statement.executeUpdate(INSERT + table + property + "values " + value);
+            System.out.println("Data berhasil ditambahkan");
         } catch (SQLException ex) {
             Logger.getLogger(DbController.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -43,7 +44,6 @@ public class DbController {
          System.out.println(SELECT + " * from " + table + " where " + column + " = " + "'" + arg + "'") ;
         try {
             resultSet = statement.executeQuery(SELECT + " * from " + table + " where " + column + " = " + "'" + arg + "'");
-            System.out.println("found!");
             return resultSet;
         } catch (SQLException ex) {
             Logger.getLogger(DbController.class.getName()).log(Level.SEVERE, null, ex);

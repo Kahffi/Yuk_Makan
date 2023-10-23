@@ -2,37 +2,65 @@ package YukMakan;
 import DatabaseController.DbController;
 import java.util.Scanner;
 import java.sql.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Main {
 
-    public static void main(String... args) throws SQLException {
+    public static void main(String... args){
+        ResultSet resultSet;
         Scanner scanner = new Scanner(System.in);
         DbController dbController = new DbController("root","YukMakan", "123212321");
-        Akun akun = new Akun();
-        Admin admin = new Admin();
-        User user = new User();
+        Akun akun = new Akun(dbController);
+        Admin admin = new Admin(dbController);
+        User user = new User (dbController);
         int start = 1;
         int menu;
-        //loop untuk menu utama
-        ResultSet resultSet;
-        resultSet = dbController.select("username", "akun", "daffa");
         
-        if(resultSet.next()){
-            System.out.println(resultSet.getString("username") + resultSet.getString("password"));
-        }
-        else{
-            System.out.println("not found");
-        }
-        /*
+        //loop untuk menu utama
+        
         while (start == 1){
             System.out.println("Selamat Datang Di Aplikasi YukMakan");
             System.out.println("1. Login\n2. Daftar Akun");
             menu = scanner.nextInt();
             if (menu == 1){
-                akun.login();
+                resultSet = akun.login();
+                try {
+                    if (resultSet.first()){
+                        System.out.println("Login berhasil");
+                        // Karena login user dan admin disatukan, maka inisialisasi harus dibuat di luar class akun dan child nya,
+                        // karena kita tidak tahu siapa yang akan login dan akan menggunakan class yang mana.
+                        
+                        if ("admin".equals(resultSet.getString("role"))){
+                            admin = new Admin(resultSet.getString("username"), resultSet.getString("password"),
+                                    resultSet.getString("phonenum"), resultSet.getString("nama"), resultSet.getString("email"),
+                                    resultSet.getString("role"), dbController);
+                        }
+                        
+                        else if ("user".equals(resultSet.getString("role"))){
+                            user = new User(resultSet.getString("username"), resultSet.getString("password"),
+                                    resultSet.getString("phonenum"), resultSet.getString("nama"), resultSet.getString("email"),
+                                    resultSet.getString("role"), dbController);
+                        }
+                    }
+                    else{
+                        System.out.println("Login gagal");
+                    }
+                } catch (SQLException ex) {
+                    Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+            // untuk daftar akun, user dapat membuat akun saat aplikasi baru dibuka, sedangkan admin perlu login terlebih dahulu
+            // sehingga inisialisasi class dapat dilakukan dalam class akun.
+            // dalam kasus ini karena sudah diketahui class mana yang akan membuat akun, maka inisialisasi dilakukan dalam method daftarAkun
+            else if (menu == 2){
+                user.daftarAkun();
             }
             
+            System.out.println(user.getNama());
+            
         }
+        /*
         */
         
         
