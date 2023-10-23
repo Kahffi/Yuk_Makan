@@ -5,6 +5,8 @@
 package DatabaseController;
 
 import java.sql.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class DbController {
     // to store sql queries in a constant
@@ -18,7 +20,7 @@ public class DbController {
 
     public DbController(String usn, String database, String pass) {
         try{
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/jdbctest", usn, pass);
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + database, usn, pass);
             System.out.println("Connected Successfully");
             statement = conn.createStatement();
             
@@ -26,4 +28,26 @@ public class DbController {
             System.out.println(e);
         }
     }
+    public DbController(){}
+    
+    public void insert(String table,String property, String value){
+        try {
+            System.out.println(INSERT + table + property + "values " + value);
+            statement.executeUpdate(INSERT + table + property + "values " + value);
+        } catch (SQLException ex) {
+            Logger.getLogger(DbController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    public ResultSet select(String column, String table, String arg){
+         System.out.println(SELECT + " * from " + table + " where " + column + " = " + "'" + arg + "'") ;
+        try {
+            resultSet = statement.executeQuery(SELECT + " * from " + table + " where " + column + " = " + "'" + arg + "'");
+            System.out.println("found!");
+            return resultSet;
+        } catch (SQLException ex) {
+            Logger.getLogger(DbController.class.getName()).log(Level.SEVERE, null, ex);
+            return null;
+        }
+     }
 }
