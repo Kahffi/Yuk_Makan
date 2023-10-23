@@ -11,7 +11,9 @@ public class User extends Akun {
         super(username, password, phoneNum, nama, email, role, dbController);
     }
 
-    public User(){}
+    public User(DbController dbController){
+        super(dbController);
+    }
 
     //method untuk menambahkan resep kedalam daftar favorit
     public void addToFav(Resep resep){
