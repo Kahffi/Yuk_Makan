@@ -1,9 +1,16 @@
 package YukMakan;
+import DatabaseController.DbController;
+import java.sql.*;
 
 import java.util.ArrayList;
+import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Resep {
 
+    static final String PROPERTIES = "(admin_username, judul, datePosted, deskripsi,"
+            + " langkah, kandunganGizi, imagePath, bahan)";
     private String judul;
     private Admin uploader;
     private String datePosted;
@@ -12,6 +19,10 @@ public class Resep {
     private String bahan;
     private String kandunganGizi;
     private String imagePath;
+    private DbController dbController;
+    
+    private Scanner scanner = new Scanner(System.in);
+    
     //ArrayList untuk menampung ulasan-ulasan dari user
     private ArrayList <Ulasan> ulasan = new ArrayList<Ulasan>();
 
@@ -27,7 +38,44 @@ public class Resep {
         this.kandunganGizi = kandunganGizi;
     }
     
-
+    public Resep(DbController dbController){
+        this.dbController = dbController;
+    }
+    
+    public void createResep(Admin uploader){
+        this.uploader = uploader;
+        System.out.println("Masukkan judul : ");
+        setJudul(scanner.nextLine());
+        System.out.println("Masukkan deskripsi : ");
+        setDeskripsi(scanner.nextLine());
+        System.out.println("Masukkan langkah : ");
+        setLangkah(scanner.nextLine());
+        System.out.println("Masukkan kandungan gizi : ");
+        setKandunganGizi(scanner.nextLine());
+        System.out.println("Masukkan sumber gambar : ");
+        setImagePath(scanner.nextLine());
+        System.out.println("Masukkan bahan: ");
+        setBahan(scanner.nextLine());
+        String value =  "('" + uploader.getUsername() + "', '" + getJudul() + "', "  + "current_date, '" 
+                + getDeskripsi() + "', '" + getLangkah() + "', '" + getKandunganGizi() + "', '"+ getImagePath() + "', '" +
+                getBahan() + "')";
+        dbController.insert("resep", PROPERTIES, value);
+    }
+    
+    public void printResep(){
+        ResultSet resultSet = dbController.selectAll("resep");
+        try {
+            while(resultSet.next()){
+                System.out.println("[1] " + resultSet.getString("judul") + "\n" + resultSet.getString("deskripsi")
+                + "\n" + resultSet.getString("bahan") + "\n" + resultSet.getString("langkah") + "\n" + resultSet.getString("kandunganGizi")
+                + "\n Uploaded by : " + resultSet.getString("admin_username") + " at : " + resultSet.getDate("datePosted" + "\n\n"));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Resep.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    
     public String getJudul(){
         return judul;
     }

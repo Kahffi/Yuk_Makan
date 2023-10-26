@@ -51,6 +51,18 @@ public class DbController {
         }
      }
     
+    public ResultSet selectAll(String table){
+        System.out.println(SELECT + " * from " + table);
+        try {
+            resultSet = statement.executeQuery(SELECT + " * from " + table);
+            return resultSet;
+        } catch (SQLException ex) {
+            Logger.getLogger(DbController.class.getName()).log(Level.SEVERE, null, ex);
+            return null;
+        }
+        
+    }
+    
     public void update(String table, String targetColumn, String newValue, String identifierColumn, String condition){
          System.out.println(UPDATE + " " + table + " set " + targetColumn + " = " + newValue + " where " + identifierColumn + " = " + condition);
         try {

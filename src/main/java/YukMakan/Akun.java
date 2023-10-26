@@ -73,13 +73,12 @@ public class Akun {
                             // jika class yang mengakses method ini adalah user, maka role = user
                             else {
                                 accRole = "user";
+                                this.username = username; this.password = pass; this.phoneNum = phone; this.role = accRole;
+                                this.email = e_mail; this.nama = name;
                             }
                             // value digunakan untuk query insert pada sql
                             this.value = "(" + "'"+ usn + "', " + "'" + pass + "', " + "'" + name + "', " + "'" + phone + "', " + "'" + e_mail + "', " + "'" + accRole +"')";
-                            dbController.insert(TABLE, PROPERTIES, value);
-                            // fungsi daftar akun juga berfungsi sebagai constructor
-                            this.username = username; this.password = pass; this.phoneNum = phone; this.role = accRole;
-                            this.email = e_mail; this.nama = name;
+                            dbController.insert(TABLE, PROPERTIES, value);                 
                             // keluar dari nested loop dan loop utama
                             x = 0;
                         }
@@ -198,27 +197,7 @@ public class Akun {
         }
         System.out.println("Login gagal");
         return null;
-    }
-    
-    public void mainMenu(){
-        int start = 1;
-        int menu;
-        while(start != 0){
-            System.out.println("1. Edit Profile");
-            menu = Integer.parseInt(scanner.nextLine());
-            if (menu == 1){
-                editProfile();
-            }
-            
-            else if (menu == 2){
-                start = 0;
-            }
-            else {
-                printInputError();
-            }
-        }
-    }
-    
+    }  
     public void editProfile(){
         int start = 1;
         int menu;

@@ -15,7 +15,6 @@ public class KontenEdukasi {
     private String content;
     private String tanggal;
     private Admin uploader;
-    private String value;
 
     public KontenEdukasi(String judul, String content, String tanggal, Admin uploader, String imagePath, DbController dbController){
         this.judul = judul;
@@ -23,22 +22,26 @@ public class KontenEdukasi {
         this.tanggal = tanggal;
         this.imagePath = imagePath;
         this.dbController = dbController;
-        this.value =  "('" + uploader.getUsername() + "', '" + getJudul() + "', '" + 
-                    getContent() + "', current_date, '" + getImagePath() + "')";
     }
+   
     public KontenEdukasi(DbController dbController){
         this.dbController = dbController;
-        this.value =  "('" + uploader.getUsername() + "', '" + getJudul() + "', '" + 
-                    getContent() + "', current_date, '" + getImagePath() + "')";
     }
-
+    
     public void createKontenEdukasi (Admin uploader) {
-            this.uploader = uploader;
-            System.out.println("Judul konten edukasi: ");
-            setJudul(scanner.nextLine());
-            System.out.println("Konten edukasi : ");
-            setContent(scanner.nextLine());
-            dbController.insert("kontenedukasi", getProperties(), value);
+        this.uploader = uploader;
+        String value =  "('" + uploader.getUsername() + "', '" + getJudul() + "', '" + 
+                    getContent() + "', current_date, '" + getImagePath() + "')";
+        System.out.println("Judul konten edukasi: ");
+        setJudul(scanner.nextLine());
+        System.out.println("Konten edukasi : ");
+        setContent(scanner.nextLine());
+        dbController.insert("kontenedukasi", getProperties(), value);
+    }
+    
+    public void printKontenEdukasi(){
+        System.out.println("~~~~~ Konten Edukasi ~~~~~");
+        
     }
     
     public String getImagePath(){

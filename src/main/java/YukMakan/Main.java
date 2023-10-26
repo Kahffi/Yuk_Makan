@@ -14,6 +14,8 @@ public class Main {
         Akun akun = new Akun(dbController);
         Admin admin = new Admin(dbController);
         User user = new User (dbController);
+        KontenEdukasi kontenEdukasi = new KontenEdukasi (dbController);
+        Resep resep = new Resep (dbController);
         int start = 1;
         int menu;
         
