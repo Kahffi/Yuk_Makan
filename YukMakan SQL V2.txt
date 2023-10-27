@@ -1,0 +1,58 @@
+CREATE TABLE akun (
+	username varchar (100) UNIQUE NOT NULL PRIMARY KEY,
+	password VARCHAR(100) NOT null,
+    nama VARCHAR(100) NOT null,
+    phonenum VARCHAR(100) NOT null,
+    email VARCHAR(100) UNIQUE NOT NULL,
+	role varchar (10) NOT null 
+);
+
+CREATE TABLE kontenedukasi (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    admin_username varchar (100),
+    FOREIGN KEY (admin_username) REFERENCES akun(username),
+    judul VARCHAR(255),
+    konten TEXT,
+    tanggal DATE,
+    imagepath VARCHAR(100)
+);
+CREATE TABLE resep (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    admin_username varchar (100),
+    FOREIGN KEY (admin_username) REFERENCES akun(username),
+    judul VARCHAR(255),
+    dateposted DATE,
+    deskripsi TEXT,
+    langkah TEXT,
+    bahan TEXT,
+    kandungangizi TEXT,
+    imagepath VARCHAR(100)
+);
+CREATE TABLE ulasan (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    resep_id INT,
+    FOREIGN KEY (resep_id) REFERENCES resep(id),
+    user_username varchar (100),
+    FOREIGN KEY (user_username) REFERENCES akun(username),
+    isi_ulasan TEXT,
+    tanggal_ulasan DATE
+);
+CREATE TABLE donasi (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    admin_username varchar (100),
+    FOREIGN KEY (admin_username) REFERENCES akun(username),
+    user_username varchar (100),
+    FOREIGN KEY (user_username) REFERENCES akun(username),
+    judul VARCHAR(255),
+    deskripsi TEXT, 
+    target_donasi DECIMAL(10, 2),
+    current_donasi DECIMAL(10, 2),
+    imagepath VARCHAR(100)
+);
+CREATE TABLE daftar_favorit (
+	user_username VARCHAR(100),
+	FOREIGN KEY (user_username) REFERENCES akun(username),
+	id_resep int,
+	FOREIGN KEY (id_resep) REFERENCES resep(id)
+	
+)

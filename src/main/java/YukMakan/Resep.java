@@ -65,16 +65,22 @@ public class Resep {
     public void printResep(){
         ResultSet resultSet = dbController.selectAll("resep");
         try {
-            while(resultSet.next()){
+            if(resultSet.next()){
                 System.out.println("[1] " + resultSet.getString("judul") + "\n" + resultSet.getString("deskripsi")
                 + "\n" + resultSet.getString("bahan") + "\n" + resultSet.getString("langkah") + "\n" + resultSet.getString("kandunganGizi")
                 + "\n Uploaded by : " + resultSet.getString("admin_username") + " at : " + resultSet.getDate("datePosted" + "\n\n"));
+            }
+            else{
+                System.out.println("Belum ada resep");
             }
         } catch (SQLException ex) {
             Logger.getLogger(Resep.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     
+    public void getResepNext(){
+        
+    }
     
     public String getJudul(){
         return judul;
