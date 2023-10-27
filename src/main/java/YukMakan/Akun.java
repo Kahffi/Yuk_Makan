@@ -24,9 +24,9 @@ public class Akun {
     private String email;
     private String role;
     
-    private DbController dbController;
+    DbController dbController;
     private static final String PROPERTIES = "(username, password, nama, phonenum, email, role)";
-    String value;
+    private String value;
     Scanner scanner = new Scanner(System.in);
     
 
@@ -73,13 +73,12 @@ public class Akun {
                             // jika class yang mengakses method ini adalah user, maka role = user
                             else {
                                 accRole = "user";
+                                this.username = username; this.password = pass; this.phoneNum = phone; this.role = accRole;
+                                this.email = e_mail; this.nama = name;
                             }
                             // value digunakan untuk query insert pada sql
                             this.value = "(" + "'"+ usn + "', " + "'" + pass + "', " + "'" + name + "', " + "'" + phone + "', " + "'" + e_mail + "', " + "'" + accRole +"')";
-                            dbController.insert(TABLE, PROPERTIES, value);
-                            // fungsi daftar akun juga berfungsi sebagai constructor
-                            this.username = username; this.password = pass; this.phoneNum = phone; this.role = accRole;
-                            this.email = e_mail; this.nama = name;
+                            dbController.insert(TABLE, PROPERTIES, value);                 
                             // keluar dari nested loop dan loop utama
                             x = 0;
                         }
@@ -122,6 +121,10 @@ public class Akun {
         return username;
     }
 
+    public DbController getDbController(){
+        return this.dbController;
+    }
+    
     public void setUsername(String username) {
         this.username = username;
     }
@@ -194,7 +197,47 @@ public class Akun {
         }
         System.out.println("Login gagal");
         return null;
+    }  
+    public void editProfile(){
+        int start = 1;
+        int menu;
+        String newNama, newPhoneNum;
+        while(start != 0){
+           printProfile();
+           System.out.println("1. Ubah nama\n2. Ubah nomor telepon\n3. Kembali");
+           
+            // Integer.parseInt digunakan untuk merubah String ke integer, ini dilakukan karena bila menggunakan nexInt maka scanner akan di-skip.
+           menu = Integer.parseInt(scanner.nextLine()) ;
+           if (menu == 1){
+               System.out.println("Ubah nama : ");
+               newNama = scanner.nextLine();
+               setNama(newNama);
+               dbController.update(TABLE, "nama", this.nama, "username", this.username);
+           }
+           else if (menu == 2){
+               System.out.println("Ubah nomor telepon : ");
+               newPhoneNum = scanner.nextLine();
+               setPhoneNum(newPhoneNum);
+               dbController.update(TABLE, "phonenum", this.phoneNum, "username", this.username);
+           }
+           else if (menu == 3){
+               start = 0;
+           }
+           else{
+               printInputError();
+           }
+        }
+        
+    }
+    public void printProfile(){
+        System.out.println("Username : " + this.username);
+        System.out.println("Nama : " + this.nama);
+        System.out.println("Nomor telepon : " + this.phoneNum);
+        System.out.println("Email : " + this.email);
     }
     
+    public void printInputError(){
+        System.out.println("Input yang anda masukkan salah");
+    }
     
 }
