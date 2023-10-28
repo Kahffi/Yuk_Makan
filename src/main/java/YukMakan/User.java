@@ -40,16 +40,16 @@ public class User extends Akun {
             }
             
             else if (menu == 2){
-                resep.printResep();
+                resepMenu();
             }
             else {
                 printInputError();
             }
         }
     }
-
    
     public void resepMenu(){
+        
         
     }
 
