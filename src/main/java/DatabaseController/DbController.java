@@ -17,13 +17,13 @@ public class DbController {
     private Connection conn;
     private Statement statement;
     private ResultSet resultSet;
+    private String query;
 
     public DbController(String usn, String database, String pass) {
         try{
             conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + database, usn, pass);
             System.out.println("Connected Successfully");
             statement = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
-            
         } catch (Exception e) {
             System.out.println(e);
         }
@@ -38,6 +38,29 @@ public class DbController {
         } catch (SQLException ex) {
             Logger.getLogger(DbController.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+    
+    public int insertGetId(String properties, String table, String value){
+        PreparedStatement prepStmt;
+        int generatedId;
+        try {
+            prepStmt = conn.prepareStatement(INSERT + " " + table + " " + properties + " values " + value, Statement.RETURN_GENERATED_KEYS);
+            prepStmt.executeUpdate();
+            ResultSet rs = prepStmt.getGeneratedKeys();
+            if (rs.next()){
+                generatedId = rs.getInt(1);
+                return generatedId;
+            }
+            else{
+                System.out.println("Data gagal ditambahkan");
+                return -1;
+            }
+        } catch (SQLException ex) {
+            System.out.println("Data gagal ditambahkan");
+            Logger.getLogger(DbController.class.getName()).log(Level.SEVERE, null, ex);
+            return -1;
+        } 
+ 
     }
     
     public ResultSet select(String column, String table, String arg){
@@ -71,4 +94,15 @@ public class DbController {
             Logger.getLogger(DbController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-}
+    public int getId(ResultSet resultSet){
+        try {
+            if(resultSet.relative(0)){
+                return resultSet.getInt(1);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(DbController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return -1;
+    }
+}   
+    

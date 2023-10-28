@@ -2,6 +2,7 @@ package YukMakan;
 import java.util.ArrayList;
 import java.util.Scanner;
 import DatabaseController.DbController;
+import java.sql.*;
 
 public class Admin extends Akun{
     
@@ -25,7 +26,7 @@ public class Admin extends Akun{
         int start = 1;
         int menu;
         while(start != 0){
-            System.out.println("1. Edit Profile\n2. Buat konten edukasi\n3. Buat resep makanan baru\n4. Daftar admin baru\n5. Kembali");
+            System.out.println("1. Edit Profile\n2. Buat konten edukasi\n3. Buat resep makanan baru\n4. Daftar admin baru\n5. Lihat resep\n6. Kembali");
             menu = Integer.parseInt(scanner.nextLine());
             if (menu == 1){
                 super.editProfile();
@@ -44,13 +45,39 @@ public class Admin extends Akun{
             }
             
             else if (menu == 5){
+                menuResep();
+            }
+            
+            else if (menu == 6){
                 start = 0;
             }
             else {
                 printInputError();
             }
         }
-        
+    }
+    
+    public void menuResep(){
+        ResultSet resultSet = null;
+        int start = 1;
+        int id;
+        int menu;
+        while (start != 0){
+            resultSet = resep.printResep(resultSet);
+            System.out.println("1. Sebelumnya\n2. Selanjutnya\n3. Edit\n0. Keluar");
+            menu = Integer.parseInt(scanner.nextLine());
+            if(menu == 1){
+                
+            }
+            else if(menu == 2){}
+            else if (menu == 3){
+                // memanggil method getId untuk mendapatkan Id dari resultSet
+                id = dbController.getId(resultSet);
+                resep.updateResep(id);
+            }
+            else if (menu == 0){start = 0;}
+            else{printInputError();}
+        }   
     }
 
 }

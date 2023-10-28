@@ -2,6 +2,7 @@ package YukMakan;
 import DatabaseController.DbController;
 import java.util.Scanner;
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -14,11 +15,10 @@ public class Main {
         Akun akun = new Akun(dbController);
         Admin admin = new Admin(dbController);
         User user = new User (dbController);
-        KontenEdukasi kontenEdukasi = new KontenEdukasi (dbController);
+        //KontenEdukasi kontenEdukasi = new KontenEdukasi (dbController);
         Resep resep = new Resep (dbController);
         int start = 1;
         int menu;
-        
         //loop untuk menu utama
         
         while (start == 1){
@@ -66,6 +66,8 @@ public class Main {
             admin.mainMenu();
             
         }
+        
+        
         /*
         */
         
