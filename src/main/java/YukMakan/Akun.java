@@ -73,8 +73,8 @@ public class Akun {
                             // jika class yang mengakses method ini adalah user, maka role = user
                             else {
                                 accRole = "user";
-                                this.username = username; this.password = pass; this.phoneNum = phone; this.role = accRole;
-                                this.email = e_mail; this.nama = name;
+                                setUsername(username); setPassword(pass); setPhoneNum(phone); setRole(accRole);
+                                setEmail(e_mail); setNama (name);
                             }
                             // value digunakan untuk query insert pada sql
                             this.value = "(" + "'"+ usn + "', " + "'" + pass + "', " + "'" + name + "', " + "'" + phone + "', " + "'" + e_mail + "', " + "'" + accRole +"')";

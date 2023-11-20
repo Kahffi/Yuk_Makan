@@ -11,7 +11,7 @@ public class Main {
     public static void main(String... args){
         ResultSet resultSet;
         Scanner scanner = new Scanner(System.in);
-        DbController dbController = new DbController("root","YukMakan", "123212321");
+        DbController dbController = new DbController("PBO","yukmakan", "1234");
         Akun akun = new Akun
         (dbController);
         Admin admin = new Admin(dbController);
@@ -22,7 +22,7 @@ public class Main {
         int menu;
         //loop untuk menu utama
         
-        while (start == 1){
+        while (start != 0){
             System.out.println("Selamat Datang Di Aplikasi YukMakan");
             System.out.println("1. Login\n2. Daftar Akun");
             menu = Integer.parseInt(scanner.nextLine());
