@@ -1,6 +1,4 @@
-YukMakan\Donasi.class
 YukMakan\Ulasan.class
-YukMakan\SecondaryController.class
 YukMakan\Resep.class
 DatabaseController\DbController.class
 YukMakan\Akun.class
@@ -8,7 +6,6 @@ YukMakan\Main.class
 module-info.class
 YukMakan\SystemInfo.class
 YukMakan\User.class
+YukMakan\Campaign.class
 YukMakan\KontenEdukasi.class
-YukMakan\PrimaryController.class
-YukMakan\App.class
 YukMakan\Admin.class

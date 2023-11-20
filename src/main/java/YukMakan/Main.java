@@ -12,7 +12,8 @@ public class Main {
         ResultSet resultSet;
         Scanner scanner = new Scanner(System.in);
         DbController dbController = new DbController("root","YukMakan", "123212321");
-        Akun akun = new Akun(dbController);
+        Akun akun = new Akun
+        (dbController);
         Admin admin = new Admin(dbController);
         User user = new User (dbController);
         //KontenEdukasi kontenEdukasi = new KontenEdukasi (dbController);
