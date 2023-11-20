@@ -42,7 +42,7 @@
                 <artifactId>javafx-maven-plugin</artifactId>
                 <version>0.0.4</version>
                 <configuration>
-                    <mainClass>YukMakan.App</mainClass>
+                    <mainClass>Main.java</mainClass>
                 </configuration>
                 <executions>
                     <execution>
