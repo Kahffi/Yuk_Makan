@@ -2,6 +2,7 @@ package YukMakan;
 
 import java.util.ArrayList;
 import DatabaseController.DbController;
+import java.sql.ResultSet;
 
 public class User extends Akun {
     // arraylist digunakan untuk mempermudah proses modifikasi array
@@ -40,7 +41,7 @@ public class User extends Akun {
             }
             
             else if (menu == 2){
-                resepMenu();
+                menuResep();
             }
             else {
                 printInputError();
@@ -48,10 +49,38 @@ public class User extends Akun {
         }
     }
    
-    public void resepMenu(){
-        
-        
+       
+    public void menuResep(){
+        ResultSet resultSet = null;
+        int start = 1;
+        int id;
+        int menu;
+        while (start != 0){
+            resultSet = resep.printResep(resultSet);
+            System.out.println("1. Sebelumnya\n2. Selanjutnya\n3. Tambahkan Ulasan\n0. Keluar");
+            menu = Integer.parseInt(scanner.nextLine());
+            if(menu == 1){
+                
+            }
+            else if(menu == 2){}
+            else if (menu == 3){
+                // memanggil method getId untuk mendapatkan Id dari resultSet
+                id = dbController.getId(resultSet);
+                Ulasan ulasan = buatUlasan();
+            }
+            else if (menu == 0){start = 0;}
+            else{printInputError();}
+        }   
     }
 
+    public Ulasan buatUlasan(){
+        Ulasan newUlasan = new Ulasan (this);
+        System.out.println("Masukkan Ulasan anda : ");
+        newUlasan.setUlasan(scanner.nextLine());
+        newUlasan.setTanggalUlasan(newUlasan.getDate());
+        
+        return newUlasan;
+    }
+    
 
 }

@@ -1,4 +1,6 @@
 package YukMakan;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class Ulasan {
     private User user;
@@ -9,6 +11,10 @@ public class Ulasan {
         this.user = user;
         this.ulasan = ulasan;
         this.tanggalUlasan = ulasan;
+    }
+    
+    public Ulasan (User user){
+        this.user = user;
     }
 
     public String getUlasanUser(){
@@ -39,6 +45,12 @@ public class Ulasan {
     }
 
 
-
+    public String getDate(){
+        String date;
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm");
+        LocalDateTime current = LocalDateTime.now();
+        date = dtf.format(current);
+        return date;
+    }
 
 }
