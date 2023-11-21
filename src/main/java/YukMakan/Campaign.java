@@ -1,5 +1,7 @@
 package YukMakan;
+import DatabaseController.DbController;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Campaign {
     private String imagePath;
@@ -9,6 +11,8 @@ public class Campaign {
     private ArrayList <User> donatur = new ArrayList<User>();
     private int targetDonasi;
     private int currentDonasi;
+    private DbController dbcontroller;
+    private Scanner input = new Scanner(System.in);
 
     public Campaign (String judul, Admin creator, String deskripsi){
         this.judul = judul;
@@ -65,5 +69,13 @@ public class Campaign {
     }
     public void setTargetDonasi(int targetDonasi){
         this.targetDonasi = targetDonasi;
+    }
+    
+    public void createCampaign(Admin Creator){
+        this.creator = creator;
+        System.out.println("Masukkan Judul Campaign");
+        setJudul(input.nextLine());
+        
+        
     }
 }

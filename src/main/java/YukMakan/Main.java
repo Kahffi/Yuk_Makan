@@ -11,7 +11,7 @@ public class Main {
     public static void main(String... args){
         ResultSet resultSet;
         Scanner scanner = new Scanner(System.in);
-        DbController dbController = new DbController("root","YukMakan", "123212321");
+        DbController dbController = new DbController("PBO","YukMakan", "1234");
         Akun akun = new Akun
         (dbController);
         Admin admin = new Admin(dbController);
