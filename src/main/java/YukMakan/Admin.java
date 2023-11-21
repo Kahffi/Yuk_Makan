@@ -33,11 +33,11 @@ public class Admin extends Akun{
             }
             
             else if (menu == 2){
-                kontenEdukasi.createKontenEdukasi(this);
+                createKontenEdukasi();
             }
             
             else if (menu == 3){
-                resep.createResep(this);
+                createResep();
             }
             
             else if (menu == 4){
@@ -55,6 +55,41 @@ public class Admin extends Akun{
                 printInputError();
             }
         }
+    }
+    
+    public void createKontenEdukasi () {
+        KontenEdukasi k;
+        k = new KontenEdukasi (this);
+        System.out.println("Judul konten edukasi: ");
+        k.setJudul(scanner.nextLine());
+        System.out.println("Konten edukasi : ");
+        k.setContent(scanner.nextLine());
+        String value =  "('" + getUsername() + "', '" + k.getJudul() + "', '" + 
+                    k.getContent() + "', current_date, '" + k.getImagePath() + "')";
+        dbController.insert("kontenedukasi", k.getProperties(), value);
+    }
+    
+    public void createResep(){
+        Resep r = new Resep (this);
+        System.out.println("Masukkan judul : ");
+        r.setJudul(scanner.nextLine());
+        System.out.println("Masukkan deskripsi : ");
+        r.setDeskripsi(scanner.nextLine());
+        System.out.println("Masukkan langkah : ");
+        r.setLangkah(scanner.nextLine());
+        System.out.println("Masukkan kandungan gizi : ");
+        r.setKandunganGizi(scanner.nextLine());
+        System.out.println("Masukkan sumber gambar : ");
+        r.setImagePath(scanner.nextLine());
+        System.out.println("Masukkan bahan: ");
+        r.setBahan(scanner.nextLine());
+        String value =  "('" + getUsername() + "', '" + r.getJudul() + "', "  + "current_date, '" 
+                + r.getDeskripsi() + "', '" + r.getLangkah() + "', '" + r.getKandunganGizi() + "', '"+ r.getImagePath() + "', '" +
+                r.getBahan() + "')";
+        // Method insertGetId akan memasukkan data ke dalam database, dan me-return auto generated ID dari mysql
+        r.setId (dbController.insertGetId(r.getProperties(), "resep",value));
+        System.out.println(r.getId());
+        
     }
     
     public void menuResep(){

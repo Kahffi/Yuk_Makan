@@ -39,6 +39,10 @@ public class Resep {
         this.kandunganGizi = kandunganGizi;
     }
     
+    public Resep(Admin admin){
+        this.uploader = admin;
+    }
+    
     public Resep(DbController dbController){
         this.dbController = dbController;
     }
@@ -258,7 +262,10 @@ public class Resep {
     public String printUlasan(int index){
         return ulasan.get(index).printUlasan();
     }
-
+    
+    public String getProperties(){
+        return PROPERTIES;
+    }
 
 
 }

@@ -28,15 +28,9 @@ public class KontenEdukasi {
         this.dbController = dbController;
     }
     
-    public void createKontenEdukasi (Admin uploader) {
+    public KontenEdukasi(Admin uploader){
         this.uploader = uploader;
-        String value =  "('" + uploader.getUsername() + "', '" + getJudul() + "', '" + 
-                    getContent() + "', current_date, '" + getImagePath() + "')";
-        System.out.println("Judul konten edukasi: ");
-        setJudul(scanner.nextLine());
-        System.out.println("Konten edukasi : ");
-        setContent(scanner.nextLine());
-        dbController.insert("kontenedukasi", getProperties(), value);
+        
     }
     
     public void printKontenEdukasi(){
