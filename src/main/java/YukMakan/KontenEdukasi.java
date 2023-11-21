@@ -72,6 +72,7 @@ public class KontenEdukasi {
     public String getProperties(){
         return PROPERTIES;
     }
+    
 
 
 }
